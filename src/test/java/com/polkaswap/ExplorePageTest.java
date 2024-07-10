@@ -5,6 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.polkaswap.helpers.Attach;
 import com.polkaswap.pages.ExplorePage;
 import com.polkaswap.pages.Header;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Story;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
@@ -16,7 +17,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
-import static io.qameta.allure.Allure.step;
 
 
 public class ExplorePageTest {
@@ -53,13 +53,13 @@ public class ExplorePageTest {
     @Story("Списки токенов на странице Explore")
     @DisplayName("Проверяем, что фильтрация по синтетическим токенам работает")
     void noSyntheticsInSearchResults(String notSyntheticTokens) {
-        step("Открываем страницу", () ->
+        Allure.step("Открываем страницу", () ->
                 explorePage.openPage());
-        step("Передвигаем ползунок 'Show only synthetic tokens'", () ->
+        Allure.step("Передвигаем ползунок 'Show only synthetic tokens'", () ->
                 explorePage.clickSwitcher());
-        step("Проверяем, что в результатах нет токена {}", () ->
+        Allure.step("Проверяем, что в результатах нет токена {}", () ->
                 explorePage.noSyntheticsInSearchResults(notSyntheticTokens));
-        step("Возвращаем ползунок 'Show only synthetic tokens' в начальное состояние", () ->
+        Allure.step("Возвращаем ползунок 'Show only synthetic tokens' в начальное состояние", () ->
                 explorePage.clickSwitcher());
     }
 
@@ -69,11 +69,11 @@ public class ExplorePageTest {
     @Story("Списки токенов на странице Explore")
     @DisplayName("Проверяем работу поисковой строки")
     void searchResultsShouldContainExpectedTokenName(String searchQuery, String expectedToken) {
-        step("Открываем страницу", () ->
+        Allure.step("Открываем страницу", () ->
                 explorePage.openPage());
-        step("Вводим поисковый запрос {0}", () ->
+        Allure.step("Вводим поисковый запрос {0}", () ->
                 explorePage.searchByQuery(searchQuery));
-        step("Проверяем, что в результатах есть токен {1}", () ->
+        Allure.step("Проверяем, что в результатах есть токен {1}", () ->
                 explorePage.checkSearchResults(expectedToken));
     }
     @CsvSource({"English,Tokens",
@@ -86,17 +86,17 @@ public class ExplorePageTest {
     @Story("Переводы")
     @DisplayName("Проверяем перевод заголовка при переключении языка")
     void checkTranslationOfHeader(String language, String expectedText) {
-        step("Открываем страницу", () ->
+        Allure.step("Открываем страницу", () ->
                 explorePage.openPage());
-        step("Кликаем настройки", () ->
+        Allure.step("Кликаем настройки", () ->
                 explorePage.clickSettings());
-        step("Выбираем пункт 'Изменить язык'", () ->
+        Allure.step("Выбираем пункт 'Изменить язык'", () ->
                 explorePage.clickChangeLanguage());
-        step("Выбираем язык {0}", () ->
+        Allure.step("Выбираем язык {0}", () ->
                 explorePage.chooseLanguage(language));
-        step("Закрываем меню языков", () ->
+        Allure.step("Закрываем меню языков", () ->
                 explorePage.closeLanguageList());
-        step("Проверяем, что заголовок выбранного раздела - {1}", () ->
+        Allure.step("Проверяем, что заголовок выбранного раздела - {1}", () ->
                 explorePage.checkTranslationOfTokensHeader(expectedText));    }
 
 
@@ -105,14 +105,14 @@ public class ExplorePageTest {
     @Story("Header")
     @DisplayName("Проверяем, что header отображается верно")
     void checkHeaderExplorePage() {
-        step("Открываем страницу", () ->
+        Allure.step("Открываем страницу", () ->
                 explorePage.openPage());
-        step("Проверяем наличие кнопки Купить токены", () ->
+        Allure.step("Проверяем наличие кнопки Купить токены", () ->
                 header.checkBuyTokensButtonExists());
-        step("Проверяем наличие кнопки карточки маркетинга", () ->
+        Allure.step("Проверяем наличие кнопки карточки маркетинга", () ->
                 header.checkMarketingCardExists());
-        step("Проверяем наличие кнопки подключения аккаунта", () ->
+        Allure.step("Проверяем наличие кнопки подключения аккаунта", () ->
                 header.checkConnectAccountButtonExists());
-        step("Проверяем наличие кнопки настроек", () ->
+        Allure.step("Проверяем наличие кнопки настроек", () ->
                 header.checkSettingsButtonExists());}
 }
