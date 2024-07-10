@@ -4,6 +4,7 @@ package com.polkaswap.tests;
 import com.polkaswap.pages.AccountPage;
 import com.polkaswap.pages.Disclaimer;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 
@@ -14,6 +15,7 @@ public class AccountPageTest extends TestBase {
     @Test
     @Tag("polkaswapAccountTest")
     @Story("Проверка начального состояния страницы")
+    @Feature("Account tests")
     @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
     void initialStateOfAccountPageCheck() {
         Allure.step("Открываем страницу", () ->
@@ -44,7 +46,8 @@ public class AccountPageTest extends TestBase {
     @Test
     @Tag("polkaswapDisclaimerTest")
     @Story("Проверка дисклеймера")
-    @DisplayName("Проверка отображения дисклеймера и работы кнопки")
+    @Feature("Disclaimer tests")
+    @DisplayName("Проверка отображения дисклеймера на странице Account")
     void disclaimerCheck() {
         Allure.step("Открываем страницу", () ->
                 accountPage.openPage());

@@ -3,6 +3,7 @@ package com.polkaswap.tests;
 
 import com.polkaswap.pages.SwapPage;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 
@@ -13,6 +14,7 @@ public class SwapPageTest extends TestBase {
     @Test
     @Tag("polkaswapSwapTest")
     @Story("Проверка начального состояния страницы")
+    @Feature("Swap")
     @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
     void initialStateOfAccountPageCheck() {
         Allure.step("Открываем страницу", () ->

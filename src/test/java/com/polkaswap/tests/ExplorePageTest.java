@@ -4,6 +4,7 @@ package com.polkaswap.tests;
 import com.polkaswap.pages.ExplorePage;
 import com.polkaswap.pages.Header;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -22,6 +23,7 @@ public class ExplorePageTest extends TestBase {
     @ParameterizedTest(name = "При переключении ползунка 'Show only synthetic tokens' в результатах не отображается токен {0}")
     @Tag("polkaswapExploreTest")
     @Story("Списки токенов на странице Explore")
+    @Feature("Explore tests")
     @DisplayName("Проверяем, что фильтрация по синтетическим токенам работает")
     void noSyntheticsInSearchResults(String notSyntheticTokens) {
         Allure.step("Открываем страницу", () ->
@@ -74,7 +76,8 @@ public class ExplorePageTest extends TestBase {
     @Test
     @Tag("headerExploreTest")
     @Story("Header")
-    @DisplayName("Проверяем, что header отображается верно")
+    @Feature("Header")
+    @DisplayName("Проверяем, что header на странице Explore отображается верно")
     void checkHeaderExplorePage() {
         Allure.step("Открываем страницу", () ->
                 explorePage.openPage());
