@@ -23,7 +23,7 @@ public class SwapPage {
 
 
     public SwapPage openPage() {
-        open("/swap");
+        open("#/swap");
         return this;
     }
 

@@ -17,7 +17,7 @@ public class AccountPage {
             textInAboutDialog = $(byText("Polkaswap is built on top of the SORA Network, and the SORA token (XOR) is used for gas/fees and liquidity provision on Polkaswap. SORA Network allows for reduced fees, faster transactions and simpler consensus finalization and is focused on delivering interoperability across other blockchain ecosystems like Ethereum."));
 
     public AccountPage openPage() {
-        open("/wallet");
+        open("#/wallet");
         return this;
     }
 

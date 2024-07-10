@@ -1,50 +1,20 @@
-package com.polkaswap;
+package com.polkaswap.tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import com.polkaswap.helpers.Attach;
+
 import com.polkaswap.pages.ExplorePage;
 import com.polkaswap.pages.Header;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.util.Map;
 
 
-
-public class ExplorePageTest {
+public class ExplorePageTest extends TestBase {
     ExplorePage explorePage = new ExplorePage();
     Header header = new Header();
-
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("#### Settings");
-        Configuration.baseUrl = "https://polkaswap.io/#";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "2560x2048";
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
-    }
-
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-    }
 
     @ValueSource(strings =  {
             "xor", "val", "pswap"

@@ -23,7 +23,7 @@ public class ExplorePage {
 
 
     public ExplorePage openPage() {
-        open("/explore/tokens");
+        open("#/explore/tokens");
         return this;
     }
 

@@ -1,46 +1,15 @@
-package com.polkaswap;
+package com.polkaswap.tests;
 
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import com.polkaswap.helpers.Attach;
+
 import com.polkaswap.pages.AccountPage;
 import com.polkaswap.pages.Disclaimer;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Story;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.util.Map;
-
-
-public class AccountPageTest {
+public class AccountPageTest extends TestBase {
     AccountPage accountPage = new AccountPage();
     Disclaimer disclaimer = new Disclaimer();
-
-    @BeforeAll
-    static void beforeAll() {
-        System.out.println("#### Settings");
-        Configuration.baseUrl = "https://polkaswap.io/#";
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
-    }
-
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-    }
-
 
     @Test
     @Tag("polkaswapAccountTest")
