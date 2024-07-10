@@ -13,10 +13,10 @@ public class SwapPageTest extends TestBase {
 
     @Test
     @Tag("polkaswapSwapTest")
-    @Story("Проверка начального состояния страницы")
+    @Story("Проверка начального состояния страницы Swap")
     @Feature("Swap")
     @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
-    void initialStateOfAccountPageCheck() {
+    void initialStateOfSwapPageCheck() {
         Allure.step("Открываем страницу", () ->
                 swapPage.openPage());
         Allure.step("Открываем настройки кастомизации страницы", () ->

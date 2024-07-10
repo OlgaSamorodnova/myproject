@@ -23,7 +23,7 @@ public class ExplorePageTest extends TestBase {
     @ParameterizedTest(name = "При переключении ползунка 'Show only synthetic tokens' в результатах не отображается токен {0}")
     @Tag("polkaswapExploreTest")
     @Story("Списки токенов на странице Explore")
-    @Feature("Explore tests")
+    @Feature("Explore")
     @DisplayName("Проверяем, что фильтрация по синтетическим токенам работает")
     void noSyntheticsInSearchResults(String notSyntheticTokens) {
         Allure.step("Открываем страницу", () ->
@@ -40,6 +40,7 @@ public class ExplorePageTest extends TestBase {
     @ParameterizedTest(name = "При поиске по слову {0} выдает результат с текстом {1}")
     @Tag("polkaswapExploreTest")
     @Story("Списки токенов на странице Explore")
+    @Feature("Explore")
     @DisplayName("Проверяем работу поисковой строки")
     void searchResultsShouldContainExpectedTokenName(String searchQuery, String expectedToken) {
         Allure.step("Открываем страницу", () ->
@@ -56,7 +57,8 @@ public class ExplorePageTest extends TestBase {
     })
     @ParameterizedTest(name = "При установленном языке {0} текст заголовка - {1} ")
     @Tag("polkaswapExploreTest")
-    @Story("Переводы")
+    @Story("Перевод страницы Explore")
+    @Feature("Languages")
     @DisplayName("Проверяем перевод заголовка при переключении языка")
     void checkTranslationOfHeader(String language, String expectedText) {
         Allure.step("Открываем страницу", () ->
@@ -75,7 +77,7 @@ public class ExplorePageTest extends TestBase {
 
     @Test
     @Tag("headerExploreTest")
-    @Story("Header")
+    @Story("Header на странице Explore")
     @Feature("Header")
     @DisplayName("Проверяем, что header на странице Explore отображается верно")
     void checkHeaderExplorePage() {

@@ -14,7 +14,7 @@ public class AccountPageTest extends TestBase {
 
     @Test
     @Tag("polkaswapAccountTest")
-    @Story("Проверка начального состояния страницы")
+    @Story("Проверка начального состояния страницы Account")
     @Feature("Account tests")
     @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
     void initialStateOfAccountPageCheck() {
@@ -45,7 +45,7 @@ public class AccountPageTest extends TestBase {
 
     @Test
     @Tag("polkaswapDisclaimerTest")
-    @Story("Проверка дисклеймера")
+    @Story("Проверка дисклеймера на странице Account")
     @Feature("Disclaimer tests")
     @DisplayName("Проверка отображения дисклеймера на странице Account")
     void disclaimerCheck() {
