@@ -22,6 +22,7 @@ public class AccountPageTest {
     static void beforeAll() {
         System.out.println("#### Settings");
         Configuration.baseUrl = "https://polkaswap.io/#";
+        Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
