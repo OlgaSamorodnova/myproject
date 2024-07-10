@@ -48,18 +48,10 @@ tasks.withType(Test) {
     }
 }
 
-task polkaswapExploreTest(type: Test) {
+task polkaswapTests(type: Test) {
     useJUnitPlatform {
-        includeTags("polkaswapExploreTest", "headerExploreTest")
+        includeTags("polkaswapExploreTest", "headerExploreTest","polkaswapAccountTest", "polkaswapDisclaimerTest","polkaswapSwapTest")
     }
 }
-task polkaswapAccountTest(type: Test) {
-    useJUnitPlatform {
-        includeTags("polkaswapAccountTest", "polkaswapDisclaimerTest")
-    }
-}
-task swapTest(type: Test) {
-    useJUnitPlatform {
-        includeTags("polkaswapSwapTest")
-    }
-}
+
+
