@@ -22,23 +22,32 @@ ____
 ## <a name="Используемый стек">**Используемый стек:**</a>
 
 <p align="center">
-<img width="6%" title="IntelliJ IDEA" src="media/Intelij_IDEA.svg">
-<img width="6%" title="Java" src="media/Java.svg">
-<img width="6%" title="Selenide" src="media/Selenide.svg">
-<img width="6%" title="Selenoid" src="media/Selenoid.svg">
-<img width="6%" title="Allure Report" src="media/Allure.svg">
-<img width="5%" title="Allure TestOps" src="media/Allure_TO.svg">
-<img width="6%" title="Gradle" src="media/Gradle.svg">
-<img width="6%" title="JUnit5" src="media/junit5-logo.png">
-<img width="6%" title="GitHub" src="media/GitHub.svg">
-<img width="6%" title="Jenkins" src="media/Jenkins.svg">
+<a href="https://www.jetbrains.com/idea/"><img width="6%" title="IntelliJ IDEA" src="media/Intelij_IDEA.svg"></a>
+<a href="https://www.java.com/ru/"><img width="6%" title="Java" src="media/Java.svg"></a>
+<a href="https://ru.selenide.org/"><img width="6%" title="Selenide" src="media/Selenide.svg"></a>
+<a href="https://github.com/allure-framework"><img width="6%" title="Allure Report" src="media/Allure.svg"></a>
+<a href="https://qameta.io/"><img width="5%" title="Allure TestOps" src="media/Allure_TO.svg"></a>
+<a href="https://github.com/gradle"><img width="6%" title="Gradle" src="media/Gradle.svg"></a>
+<a href="https://github.com/junit-team/junit5"><img width="6%" title="JUnit5" src="media/junit5-logo.png"></a>
+<a href="[https://github.com/junit-team/junit5](https://github.com/)"><img width="6%" title="GitHub" src="media/GitHub.svg"></a>
+<a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Jenkins.svg"></a>
 </p>
+
+Код написан в <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>
+Язык для написания тестов: <a href="https://www.java.com/ru/">Java</a>
+Библиотека для написания UI тестов: <a href="https://ru.selenide.org/">Selenide</a>
+Фреймворк для модульного тестирования: <a href="https://github.com/junit-team/junit5">Junit5</a>
+Инструмент для автоматизации сборки: <a href="https://github.com/gradle">Gradle</a>
+Фреймворк для удаленного запуска с тестовыми параметрами: <a href="https://www.jenkins.io/">Jenkins</a>
+Отчеты о пройденных тестах формируются при помощи: <a href="https://github.com/allure-framework">Allure</a>
+Реализована интеграция с <a href="https://qameta.io/">Allure TestOps</a>
+
 
 <a id="jenkins"></a>
 ## <img alt="Jenkins" height="25" src="media/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins](https://jenkins.autotests.cloud/job/osamorodnova_project/)</a>
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="media/jenkins_build.png" alt="Jenkins" width="950"/></a>  
+<a href="https://jenkins.autotests.cloud/job/osamorodnova_project/"><img src="media/jenkins_build.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 <a id="console"></a>
