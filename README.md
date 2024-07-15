@@ -33,14 +33,14 @@ ____
 <a href="https://www.jenkins.io/"><img width="6%" title="Jenkins" src="media/Jenkins.svg"></a>
 </p>
 
-Код написан в <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>
-Язык для написания тестов: <a href="https://www.java.com/ru/">Java</a>
-Библиотека для написания UI тестов: <a href="https://ru.selenide.org/">Selenide</a>
-Фреймворк для модульного тестирования: <a href="https://github.com/junit-team/junit5">Junit5</a>
-Инструмент для автоматизации сборки: <a href="https://github.com/gradle">Gradle</a>
-Фреймворк для удаленного запуска с тестовыми параметрами: <a href="https://www.jenkins.io/">Jenkins</a>
-Отчеты о пройденных тестах формируются при помощи: <a href="https://github.com/allure-framework">Allure</a>
-Реализована интеграция с <a href="https://qameta.io/">Allure TestOps</a>
+* Код написан в <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>
+* Язык для написания тестов: <a href="https://www.java.com/ru/">Java</a>
+* Библиотека для написания UI тестов: <a href="https://ru.selenide.org/">Selenide</a>
+* Фреймворк для модульного тестирования: <a href="https://github.com/junit-team/junit5">Junit5</a>
+* Инструмент для автоматизации сборки: <a href="https://github.com/gradle">Gradle</a>
+* Фреймворк для удаленного запуска с тестовыми параметрами: <a href="https://www.jenkins.io/">Jenkins</a>
+* Отчеты о пройденных тестах формируются при помощи: <a href="https://github.com/allure-framework">Allure</a>
+* Реализована интеграция с <a href="https://qameta.io/">Allure TestOps</a>
 
 
 <a id="jenkins"></a>
