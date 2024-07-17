@@ -9,8 +9,8 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 
 public class AccountPageTest extends TestBase {
-    AccountPage accountPage = new AccountPage();
-    Disclaimer disclaimer = new Disclaimer();
+    private final AccountPage accountPage = new AccountPage();
+    private final Disclaimer disclaimer = new Disclaimer();
 
     @Test
     @Tag("polkaswapAccountTest")
@@ -18,30 +18,22 @@ public class AccountPageTest extends TestBase {
     @Feature("Account tests")
     @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
     void initialStateOfAccountPageCheck() {
-        Allure.step("Открываем страницу", () ->
-                accountPage.openPage());
-        Allure.step("Проверяем название кнопки Connect Account", () ->
-                accountPage.checkAccountControlTitle());
-        Allure.step("Проверяем текст на странице", () ->
-                accountPage.checkWalletConnectionText());
-        Allure.step("Проверяем наличие кнопки Google", () ->
-                accountPage.checkGooglebutton());
-        Allure.step("Проверяем наличие кнопки Google", () ->
-                accountPage.checkGooglebutton());
+        accountPage.openPage();
+        accountPage.checkAccountControlTitle();
+        accountPage.checkWalletConnectionText();
         Allure.step("Проверяем наличие кнопок расширений", () -> {
-            accountPage.checkGooglebutton();
-            accountPage.checkFearlessbutton();
-            accountPage.checkPolkadotbutton();
-            accountPage.checkSubWalletbutton();
-            accountPage.checkTalismanbutton();
+            accountPage.checkGoogleButton();
+            accountPage.checkFearlessButton();
+            accountPage.checkPolkadotButton();
+            accountPage.checkSubWalletButton();
+            accountPage.checkTalismanButton();
         });
         Allure.step("Проверяем работу кнопки Learn More", () -> {
-            accountPage.pressLearnMoreBtn();
+            accountPage.pressLearnMoreButton();
             accountPage.checkAboutText();
         });
 
     }
-
 
     @Test
     @Tag("polkaswapDisclaimerTest")
@@ -49,27 +41,15 @@ public class AccountPageTest extends TestBase {
     @Feature("Disclaimer tests")
     @DisplayName("Проверка отображения дисклеймера на странице Account")
     void disclaimerCheck() {
-        Allure.step("Открываем страницу", () ->
-                accountPage.openPage());
-        Allure.step("Проверяем, что дисклеймер отображается", () ->
-                disclaimer.checkDisclaimerExists());
-        Allure.step("Проверяем, что кнопка неактивна", () ->
-                disclaimer.checkDisclaimerHeader());
-        Allure.step("Проверяем, что кнопка неактивна", () ->
-                disclaimer.checkAcceptBtnIsDisabled());
-        Allure.step("Скроллим до конца", () ->
-                disclaimer.scrollToBottom());
-        Allure.step("Проверяем, что кнопка активна", () ->
-                disclaimer.checkAcceptBtnIsEnabled());
-        Allure.step("Нажимаем кнопку", () ->
-                disclaimer.pressAcceptBtn());
-        Allure.step("Проверяем, что дисклеймер не отображается", () ->
-                disclaimer.checkDisclaimerNotExist());
-        Allure.step("Обновляем страницу", () ->
-                disclaimer.refreshPage());
-        Allure.step("Проверяем, что дисклеймер не отображается", () ->
-                disclaimer.checkDisclaimerNotExist());
+        accountPage.openPage();
+        disclaimer.checkDisclaimerExists();
+        disclaimer.checkDisclaimerHeader();
+        disclaimer.checkAcceptBtnIsDisabled();
+        disclaimer.scrollToBottom();
+        disclaimer.checkAcceptBtnIsEnabled();
+        disclaimer.pressAcceptBtn();
+        disclaimer.checkDisclaimerNotExist();
+        disclaimer.refreshPage();
+        disclaimer.checkDisclaimerNotExist();
     }
-
-
 }

@@ -2,37 +2,28 @@ package com.polkaswap.tests;
 
 
 import com.polkaswap.pages.SwapPage;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 
 
 public class SwapPageTest extends TestBase {
-    SwapPage swapPage = new SwapPage();
+    private final SwapPage swapPage = new SwapPage();
 
     @Test
     @Tag("polkaswapSwapTest")
-    @Story("Проверка начального состояния страницы Swap")
+    @Story("Проверка кастомизации страницы Swap")
     @Feature("Swap")
-    @DisplayName("Проверка состояния страницы без авторизации и установленных расширений")
+    @DisplayName("Проверка изменения внешнего вида страницы Swap при переключении ползунков кастомизации")
     void initialStateOfSwapPageCheck() {
-        Allure.step("Открываем страницу", () ->
-                swapPage.openPage());
-        Allure.step("Открываем настройки кастомизации страницы", () ->
-                swapPage.clickCustomizeSettings());
-        Allure.step("Двигаем ползунок Price Chart", () ->
-                swapPage.clickPriceChartSetting());
-        Allure.step("Двигаем ползунок Route", () ->
-                swapPage.clickRouteSetting());
-        Allure.step("Двигаем ползунок Transactions", () ->
-                swapPage.clickTransactionSetting());
-        Allure.step("Проверяем, что Price Chart не показывается на странице", () ->
-                swapPage.checkPriceChartInvisible());
-        Allure.step("Проверяем, что Route не показывается на странице", () ->
-                swapPage.checkRouteInvisible());
-        Allure.step("Проверяем, что Transactions показывается на странице", () ->
-                swapPage.checkTransactionsVisible());
+        swapPage.openPage();
+        swapPage.clickCustomizeSettings();
+        swapPage.clickPriceChartSetting();
+        swapPage.clickRouteSetting();
+        swapPage.clickTransactionSetting();
+        swapPage.checkPriceChartInvisible();
+        swapPage.checkRouteInvisible();
+        swapPage.checkTransactionsVisible();
     }
 }
 
